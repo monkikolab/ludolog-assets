@@ -1,0 +1,61 @@
+# Tema Parlour.
+#
+# OJO: hoy este fichero NO lo lee nadie. Es el retrato de lo que ahora mismo vive dentro
+# del codigo, en Theme.kt, escrito aqui para dos cosas: que el tema este entero en un solo
+# sitio, y que se vea de un vistazo cuanto falta por sacar del programa.
+#
+# Lo que SI se lee hoy es tvs.toml y las carpetas media/. Lo de aqui abajo se cambia
+# recompilando, que es justo lo que hay que arreglar.
+
+[theme]
+id   = "parlour"
+name = "Parlour"
+
+# ------------------------------------------------------------------ color
+[colors]
+ground        = "0xFF0A0A0A"   # el fondo de todo
+ink           = "0xFFEDEDED"   # texto principal
+dim           = "0xFF8C8C8C"   # texto secundario
+faint         = "0xFF4C4C4C"   # texto apagado
+line          = "0xFF2E2E2E"   # reglas y separadores
+accent        = "0xFFC4262A"   # el rojo: cursor, titulos, marcos
+selectionFill = "0xFF2A0C0C"   # rojo casi negro: cambio de fondo, no luz
+
+# ------------------------------------------------------------------ letra
+[type]
+display        = "monospace"
+body           = "monospace"
+upperTitles    = true
+titleTracking  = 6.0   # muy abierto: en monoespaciada el espaciado hace el rotulo
+itemTracking   = 2.0   # menos, o un titulo largo no cabe en la columna
+captionTracking = 3.0
+scale          = 0.9
+
+# ------------------------------------------------------------------ adorno
+[ornament]
+divider     = "lozenge"   # rombos entre regletas
+selection   = "bar"       # barra al borde, no relleno
+pixelIcons  = true        # iconos dibujados a pixel, no vectoriales
+looseRules  = true        # regletas sueltas en vez de caja cerrada
+corner      = 0           # esquinas a escuadra
+
+# ------------------------------------------------------------------ tubo
+# La ganancia esta a 1.50 y no a 1.32 porque al quitar la floracion la imagen perdio nivel:
+# medido dentro del tubo, de 69,7 a 60,3 sobre 255.
+[crt]
+curvature = 0.11
+scanline  = 0.38
+mask      = 0.28
+gain      = 1.50
+
+# ------------------------------------------------------------------ sonido
+# Los cinco ficheros estan en sounds/. Estos son los niveles con los que se mezclan.
+[sound]
+ambienceLevel = 0.6    # sobre el propio fichero, que ya va a -15 dB de pico
+panelVolume   = 14     # por ciento: la television esta al fondo del cuarto
+tapeFilter    = true   # ecualizador estrecho, compresor y reverberacion de sala
+
+# ------------------------------------------------------------------ sala
+# La sala en si se define en tvs.toml, que esta al lado y ese SI se lee.
+[scene]
+tv = "parlour"

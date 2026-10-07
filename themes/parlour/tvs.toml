@@ -1,0 +1,115 @@
+# La sala de fondo.
+#
+# Lo empaqueta pack-theme.sh y lo instala install.sh en <unidad>/Ludolog/themes/parlour/.
+#
+# Van TRES imágenes, que es lo que permite que una habitación fija parezca viva:
+#
+#   image   la sala con todo apagado salvo la luz general
+#   glow    solo lo que alumbra la televisión  -> se tiñe con el color del gameplay
+#   embers  solo lo que alumbran las brasas    -> parpadea por su cuenta
+#
+# En cada una está cocido el reparto de la luz por el cuarto: la caída, los ángulos y las
+# sombras. Lo único que se decide en vivo es con qué color y con qué fuerza se suman.
+#
+# `corners` son las cuatro esquinas de la pantalla, no un rectángulo, porque la tele está en
+# diagonal. Las calcula tools/psx-scene.py proyectándolas con la misma cámara que rinde.
+
+[[tv]]
+id     = "parlour"
+name   = "Salon victoriano"
+image  = "scenes/parlour.png"
+glow   = "scenes/parlour-tv.png"
+embers = "scenes/parlour-embers.png"
+fullScreen = true
+
+corners = [0.6201, 0.2675, 0.6944, 0.2764, 0.6869, 0.4188, 0.6161, 0.3894]
+
+# Donde se planta la consola que gira, en fraccion de la pantalla: x, y, ancho, alto.
+#
+# Centrada en la mitad derecha, que es la que el menu deja libre. En pixeles: la caja va de
+# 960 a 1600, o sea centrada en 1280, que es justo el centro de lo que queda a la derecha del
+# menu (de 640 a 1920). Y de 350 a 830, centrada en 590, que es el centro de lo que queda por
+# debajo de la barra de estado.
+#
+# Arranca en 350 y no mas arriba porque la television acaba en 450: por encima de eso la
+# consola se le montaria encima.
+#
+# 640x480 en pantalla son 128x96 pixeles de sala justos, y los giros se rinden a ese tamano
+# para que su pixel sea el mismo cuadrado que el del cuarto. Las dos esquinas caen ademas en
+# multiplos de cinco, que es lo que hace que las dos rejillas coincidan en vez de quedar
+# desplazadas medio pixel.
+console = [0.5, 0.3009, 0.3333, 0.4444]
+
+# El dialogo de la sala: donde se escribe, letra a letra, lo que se cuenta de la consola o
+# del juego elegido. Debajo de la consola y algo mas ancho que ella; llega casi al borde de
+# abajo porque el texto va en tres lineas de letra grande y necesita el alto.
+caption = [0.44, 0.76, 0.42, 0.23]
+
+# La misma sala, con The Reckoning sobre la mesita en vez de la máquina de escribir.
+#
+# `requires` dice de qué depende: la app la usa sólo si The Reckoning está encendido en los
+# ajustes, y si no se queda con la de arriba. Es un ajuste del decorado y no del código
+# porque es una decisión del decorado: quien monte otra sala con otra condición no debería
+# tener que tocar la app.
+#
+# Las esquinas son las de arriba Y TIENEN QUE SERLO: parlour_reckoning.toml sale de
+# parlour.toml con `extends` y no toca la cámara, así que la pantalla cae en el mismo sitio.
+# Por eso psx-scene.sh puede escribir las dos líneas de golpe. Si algún día una sala mueve la
+# cámara, esa cuenta deja de salir y habrá que separarlas.
+
+[[tv]]
+id     = "parlour_reckoning"
+name   = "Salon victoriano · The Reckoning"
+image  = "scenes/parlour_reckoning.png"
+glow   = "scenes/parlour_reckoning-tv.png"
+embers = "scenes/parlour_reckoning-embers.png"
+fullScreen = true
+requires   = "reckoning"
+
+corners = [0.6201, 0.2675, 0.6944, 0.2764, 0.6869, 0.4188, 0.6161, 0.3894]
+
+console = [0.5, 0.3009, 0.3333, 0.4444]
+caption = [0.44, 0.76, 0.42, 0.23]
+
+# La misma sala con la radio de Ludolog Link tirada en el suelo (parlour_link.toml), y la de las
+# dos cosas a la vez: el libro en la mesita y la radio en el suelo (parlour_reckoning_link.toml).
+#
+# `requires` puede pedir VARIAS cosas, separadas por espacios, y tienen que cumplirse todas. La
+# app usa la sala que más pida de entre las que se cumplen: con The Reckoning encendido y Link
+# instalado, la de las dos; con una sola, la suya; sin ninguna, la de siempre.
+#
+#   reckoning   The Reckoning encendido en los ajustes
+#   link        Ludolog Link instalado en el aparato
+#
+# `led` es la luz del LED de la radio, sola y en blanco: la app la tiñe de verde y la hace latir
+# mientras Link escucha, y la deja en rojo quieto cuando está apagado.
+
+[[tv]]
+id     = "parlour_link"
+name   = "Salon victoriano · Ludolog Link"
+image  = "scenes/parlour_link.png"
+glow   = "scenes/parlour_link-tv.png"
+embers = "scenes/parlour_link-embers.png"
+led    = "scenes/parlour_link-led.png"
+fullScreen = true
+requires   = "link"
+
+corners = [0.6201, 0.2675, 0.6944, 0.2764, 0.6869, 0.4188, 0.6161, 0.3894]
+
+console = [0.5, 0.3009, 0.3333, 0.4444]
+caption = [0.44, 0.76, 0.42, 0.23]
+
+[[tv]]
+id     = "parlour_reckoning_link"
+name   = "Salon victoriano · The Reckoning · Ludolog Link"
+image  = "scenes/parlour_reckoning_link.png"
+glow   = "scenes/parlour_reckoning_link-tv.png"
+embers = "scenes/parlour_reckoning_link-embers.png"
+led    = "scenes/parlour_reckoning_link-led.png"
+fullScreen = true
+requires   = "reckoning link"
+
+corners = [0.6201, 0.2675, 0.6944, 0.2764, 0.6869, 0.4188, 0.6161, 0.3894]
+
+console = [0.5, 0.3009, 0.3333, 0.4444]
+caption = [0.44, 0.76, 0.42, 0.23]

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!--
+    Ludolog Link en el tema Mainframe: la placa de servicio del Companion, con su ojo troquelado,
+    emitiendo. Como en el icono de la app —la gema del Companion con ondas— pero con la materia
+    de este tema: las ondas facetadas, tres tramos rectos y cortes francos, sin una curva.
+
+    Lo genera tools/link-marks.py (fuentes de los temas); retocar alli, no aqui. Mismos tres tonos que
+    companion.svg, y como alli no son color sino luz.
+  -->
+  <defs>
+    <style>
+      .placa   { fill: #6e6e6e; }
+      .canto   { fill: #a8a8a8; }
+      .grabado { fill: #eaeaea; }
+    </style>
+  </defs>
+
+  <path class="placa" d="M55,22 L120,22 L145,47 L145,178 L55,178 Z
+                         M66,86 L90,103 L110,103 L134,86 L110,69 L90,69 Z"/>
+  <polygon class="canto" points="120,22 145,47 139.3,52.7 114.3,27.7"/>
+  <polygon class="grabado" points="100,77 109,86 100,95 91,86"/>
+  <polygon class="grabado" points="66,118 134,118 134,134 66,134"/>
+  <polygon class="grabado" points="66,144 104,144 104,160 66,160"/>
+
+  <!-- Las ondas. -->
+  <polygon class="canto" points="41.4,141.0 30.0,114.5 30.0,85.5 41.4,59.0 48.8,64.2 38.8,87.4 38.8,112.6 48.8,135.8"/>
+  <polygon class="canto" points="158.6,59.0 170.0,85.5 170.0,114.5 158.6,141.0 151.2,135.8 161.2,112.6 161.2,87.4 151.2,64.2"/>
+  <polygon class="placa" points="23.4,153.6 8.4,118.9 8.4,81.1 23.4,46.4 30.8,51.5 17.2,82.9 17.2,117.1 30.8,148.5"/>
+  <polygon class="placa" points="176.6,46.4 191.6,81.1 191.6,118.9 176.6,153.6 169.2,148.5 182.8,117.1 182.8,82.9 169.2,51.5"/>
+</svg>

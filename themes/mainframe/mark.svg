@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!--
+    Marca provisional del tema Mainframe: un diafragma.
+
+    Esta para que el tema tenga firma desde el primer minuto y para sustituirla. Es geometrica
+    y de ocho lados a proposito: a veintiocho puntos, y encima de un tubo con lineas de barrido,
+    una curva se deshace y un poligono aguanta.
+
+    Tres tonos y no uno. El programa NO usa estos grises: saca de cada uno su claridad y la
+    vuelve a montar con el color del tema, asi que lo que se guarda aqui no es el color sino la
+    luz — que cara mira al foco y cual esta en sombra. Con un solo gris saldria plana.
+
+    Sin circulos ni arcos: el lector de la aplicacion entiende `path`, `polygon` y `polyline`,
+    que es lo que sale de las herramientas de dibujo, y no `circle` ni el comando A.
+  -->
+  <defs>
+    <style>
+      .anillo { fill: #707070; }
+      .eje    { fill: #3c3c3c; }
+      .nucleo { fill: #eaeaea; }
+    </style>
+  </defs>
+
+  <!-- El anillo: el octogono de fuera en un sentido y el de dentro en el contrario, que es
+       lo que deja el hueco en medio en vez de un disco. -->
+  <path class="anillo" d="M190,100 L163.6,163.6 L100,190 L36.4,163.6 L10,100 L36.4,36.4 L100,10 L163.6,36.4 Z
+                          M168,100 L148.1,51.9 L100,32 L51.9,51.9 L32,100 L51.9,148.1 L100,168 L148.1,148.1 Z"/>
+
+  <!-- El eje, detras del nucleo. -->
+  <polygon class="eje" points="30,94 170,94 170,106 30,106"/>
+
+  <!-- Y el nucleo. -->
+  <polygon class="nucleo" points="100,62 138,100 100,138 62,100"/>
+</svg>

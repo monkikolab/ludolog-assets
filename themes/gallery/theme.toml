@@ -1,0 +1,114 @@
+# Tema Gallery, en sus dos luces.
+#
+# OJO: hoy este fichero NO lo lee nadie. Es el retrato de lo que ahora mismo vive dentro del
+# codigo, en Theme.kt —GalleryTheme y GalleryLightTheme—, escrito aqui para dos cosas: que el
+# tema este entero en un solo sitio, y que se vea de un vistazo cuanto falta por sacar del
+# programa.
+#
+# Lo que SI se lee hoy: sounds/, font/ y backdrop.*, que el instalador deja en
+# Ludolog/themes/gallery/ y el programa busca ahi antes que en el APK.
+
+[theme]
+id   = "gallery"
+name = "Gallery"
+
+# La luz no es otro tema: es un ajuste de este. Se cambia en Ajustes -> Theme -> Appearance,
+# en la fila «Light». Estuvo dos dias como un aspecto mas en la lista y era una entrada que
+# mentia: quien elige un aspecto elige uno, no dos veces el mismo con el papel cambiado.
+[theme.light]
+default = false
+
+# ------------------------------------------------------------------ color, oscuro
+[colors]
+ground        = "0xFF0E0E10"
+ink           = "0xFFF2F2F4"
+dim           = "0xFF9A9AA2"
+faint         = "0xFF5A5A62"
+line          = "0xFF26262B"
+accent        = "0xFF7F94A8"   # azul de grafito: se ve que es un color y no se pone delante
+selectionFill = "0xFF191A1D"
+
+# ------------------------------------------------------------------ color, la otra luz
+#
+# No es el oscuro del reves. El contraste no es simetrico: en oscuro el texto apagado SUBE
+# hacia el fondo para apagarse y en claro BAJA, asi que `dim` y `faint` son dos escaleras
+# distintas medidas cada una contra su propio fondo. Invirtiendo a secas, el texto secundario
+# salia mas marcado que el principal.
+#
+# Y el fondo es hueso, no blanco. Un 255 en una pantalla brillante a un palmo de la cara es
+# una lampara; dos puntos por debajo ya se lee como papel.
+[colors.light]
+ground        = "0xFFF6F6F3"
+ink           = "0xFF16161A"
+dim           = "0xFF5C5C66"
+faint         = "0xFFA8A8B0"
+line          = "0xFFDCDCD6"
+accent        = "0xFF4A6076"
+selectionFill = "0xFFE8E8E2"   # gris de papel: un relleno de color se lee como rotulador
+
+# ------------------------------------------------------------------ letra
+[type]
+display         = "sans-serif"
+body            = "sans-serif"
+upperTitles     = true
+titleTracking   = 5.0    # abierto: el espaciado es lo unico que separa un rotulo de una linea
+itemTracking    = 0.5    # casi cerrado, para que el nombre se lea y ya
+captionTracking = 2.0
+scale           = 1.0
+
+# ------------------------------------------------------------------ adorno
+#
+# Hay adorno, y por eso hay UNO: la regla de un pelo y la barra de acento de la fila elegida.
+# Dos gestos, repetidos en todas partes. Lo que hace elegante a un tema asi no es quitar hasta
+# que no queda ninguno, es quitar hasta que queda uno y usarlo siempre igual.
+[ornament]
+divider    = "hair"
+selection  = "bar"
+pixelIcons = false
+looseRules = false
+corner     = 0
+
+# ------------------------------------------------------------------ movimiento
+#
+# Ninguno. Ni video de juego ni consolas girando: la caratula y nada mas. Va aqui y no en las
+# preferencias porque no es un ajuste, es el tema: la quietud ES el asunto.
+[motion]
+stills = true
+
+# ------------------------------------------------------------------ tubo
+#
+# Apagado del todo, y a cero y no «casi a cero» a proposito: lo que hay en el panel es una
+# caratula, y una caratula con curvatura y lineas de barrido es una caratula estropeada.
+[crt]
+curvature = 0.0
+scanline  = 0.0
+mask      = 0.0
+gain      = 1.0
+halo      = 0.0
+
+# ------------------------------------------------------------------ la marca
+#
+# La que firma la tarjeta que asoma al empezar a jugar. Se lee su SILUETA —la union de todas
+# sus figuras— y se pinta del acento: los grises con los que se dibuja un diamante son del
+# dibujo y no del tema, y ademas un gris no se tine de nada.
+[mark]
+file = "mark.svg"
+
+# ------------------------------------------------------------------ fondo
+#
+# En vez de sala. Una imagen quieta o un video corto en bucle, con un velo del color de fondo
+# del tema encima: por eso la misma imagen vale para las dos luces.
+[backdrop]
+file = "backdrop.jpg"
+veil = 0.45
+
+# ------------------------------------------------------------------ el cuaderno
+#
+# El NOMBRE no es del tema: se llama «Companion» en todos, y a proposito. Uno por tema confunde
+# —quien cambia de tema cree que es otra herramienta y que lo apuntado se quedo en la anterior—
+# y ademas es como se llama ya en todo lo demas: CompanionArt, companion_open, psx-companion.
+#
+# Lo que si cambia con el tema es como se ve: aqui sin el avatar girando, sin el vitral de las
+# barras y con el fondo de abajo, no con el del Parlour.
+[companion]
+name = "Companion"   # igual en todos los temas; no se cambia por tema

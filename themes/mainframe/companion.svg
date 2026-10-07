@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!--
+    El emblema del Companion: una PLACA DE SERVICIO con un ojo troquelado.
+
+    El Companion no es una consola ni un menu: es el expediente que la maquina lleva sobre ti.
+    De ahi la chapa — el objeto en el que una maquina graba lo tuyo, con su agujero de colgar y
+    sus renglones estampados.
+
+    Y de ahi el OJO, que es lo que ata este emblema al del Parlour. Alli el cuaderno es un libro
+    con un ojo en la tapa; aqui es una chapa con un ojo troquelado. Cambia el material, no la
+    idea: algo que mira y apunta. Un tema no se hereda copiando el dibujo, se hereda repitiendo
+    el gesto con la materia de cada uno.
+
+    Va CORTADO y no dibujado encima, que es lo que lo hace de la chapa en vez de estar pegado
+    a ella. Y de paso rima con la marca del tema sin repetirla: el diafragma es una abertura
+    vacia, esto es una abertura con algo detras.
+
+    Facetado y no curvo, por dos razones: el lector no entiende arcos, y a este tamaņo una
+    curva de pocos puntos se lee peor que un poligono franco. Seis lados bastan para que se lea
+    ojo — punta a los lados, plano arriba y abajo.
+
+    ESTRECHA, y eso se aprendio mirandola. Con la placa casi cuadrada y una ranura ancha arriba
+    lo que se leia era un DISQUETE. Nueve por dieciseis y un agujero pequeņo a un lado lo cura.
+
+    Tres tonos y no uno. El programa NO usa estos grises: saca de cada uno su claridad y la
+    vuelve a montar con el color del tema, asi que lo que se guarda aqui no es color sino luz.
+
+    Y el canto del corte va CLARO, no oscuro, al reves de lo que pide el instinto: sobre fondo
+    negro un gris oscuro queda casi del color del fondo, se funde con el, y la esquina cortada
+    deja de leerse como corte para parecer una hoja doblada. Claro es un filo que da la luz.
+  -->
+  <defs>
+    <style>
+      .placa   { fill: #6e6e6e; }
+      .canto   { fill: #a8a8a8; }
+      .grabado { fill: #eaeaea; }
+    </style>
+  </defs>
+
+  <!-- La chapa, con DOS huecos: el agujero de colgar y el ojo. Los dos en sentido contrario al
+       contorno, que es lo que los deja pasados en vez de ser parches encima. -->
+  <path class="placa" d="M55,22 L120,22 L145,47 L145,178 L55,178 Z
+                         M66,86 L90,103 L110,103 L134,86 L110,69 L90,69 Z"/>
+
+  <!-- El canto del corte, iluminado. -->
+  <polygon class="canto" points="120,22 145,47 139.3,52.7 114.3,27.7"/>
+
+  <!-- La pupila, encendida dentro del hueco: es lo que convierte un agujero con forma en una
+       mirada. Va despues del troquel a proposito, para pintar por encima de el. -->
+  <polygon class="grabado" points="100,77 109,86 100,95 91,86"/>
+
+  <!-- Lo estampado, debajo. Dos renglones y no tres: a veintiocho pixeles, y con una fila de
+       cada tres apagada por el barrido, tres se funden en una mancha. -->
+  <polygon class="grabado" points="66,118 134,118 134,134 66,134"/>
+  <polygon class="grabado" points="66,144 104,144 104,160 66,160"/>
+</svg>

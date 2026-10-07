@@ -1,0 +1,119 @@
+# Tema Mainframe, a la manera de Signalis.
+#
+# OJO: hoy este fichero NO lo lee nadie. Es el retrato de lo que ahora mismo vive dentro del
+# codigo, en Theme.kt —MainframeTheme—, escrito aqui para dos cosas: que el tema este entero
+# en un solo sitio, y que se vea de un vistazo cuanto falta por sacar del programa.
+#
+# Lo que SI se lee hoy: sounds/, font/, backdrop.* y mark.svg, que el instalador deja en
+# Ludolog/themes/mainframe/ y el programa busca ahi antes que en el APK.
+
+[theme]
+id   = "mainframe"
+name = "Mainframe"
+
+# ------------------------------------------------------------------ color
+#
+# Negro, hueso y UN fosforo.
+#
+# El rojo es mas vivo y mas naranja que el del Parlour: alli el rojo es sangre en la penumbra,
+# aqui es luz saliendo de un tubo. Se distinguen puestos uno al lado del otro, que es la prueba
+# que importa.
+#
+# Y la tinta es hueso, no blanco: un fosforo no emite blanco de pantalla, y ademas el blanco
+# puro contra el negro puro es el contraste de una hoja de calculo.
+[colors]
+ground = "0xFF0A0A0C"
+ink    = "0xFFD9D4C8"
+dim    = "0xFF8A8578"
+faint  = "0xFF55524A"
+line   = "0xFF2A2823"
+accent = "0xFFD8453A"
+
+# ------------------------------------------------------------------ letra
+[type]
+display         = "monospace"
+body            = "monospace"
+upperTitles     = true
+titleTracking   = 3.0
+itemTracking    = 2.0
+captionTracking = 3.0
+scale           = 1.0
+
+# ------------------------------------------------------------------ adorno
+#
+# La fila elegida se invierte ENTERA, como un bloque de terminal: el fondo toma el color de la
+# tinta y el texto el del fondo. Eso es lo que la separa de una barra de color en el canto.
+#
+# Iconos de pixeles SI, letra de pixeles NO, y esa asimetria es a proposito: un icono de once
+# por once lo dibuja cualquiera, una lamina de letras es un abecedario entero. La que trae el
+# programa es la de los dialogos de un juego concreto y se reconoce, asi que hasta que este
+# tema tenga la suya escribe con una monoespaciada. Ver el README.
+[ornament]
+divider    = "scan"
+selection  = "outline"
+pixelIcons = true
+pixelText  = false
+looseRules = false
+# El panel derecho en DOS cajas —imagen arriba, su texto debajo— y la lista con todo el alto.
+framedPanel = true
+corner     = 0
+
+# ------------------------------------------------------------------ movimiento
+#
+# Con movimiento, al reves que el Gallery: una maquina encendida no esta quieta. Pero no
+# dentro de un mueble —no hay televisor dibujado— y los giros no son de volumen: van
+# convertidos a caracteres, que es lo que esta pantalla sabe dibujar.
+[motion]
+stills = false
+# Los giros de consola SI, los medallones del cajon de apps NO.
+#
+# Son dos cadenas de medios distintas y por eso dos interruptores. Los giros son de este tema
+# —de caracteres— pero media/apps es UNA sola carpeta para todo el aparato, asi que de ahi
+# salen los renders de volumen del vecino. Con un solo interruptor, encender los giros encendia
+# tambien esos. Apagado, en el cajon va el icono de la app en grande.
+spins    = true
+appSpins = false
+
+# ------------------------------------------------------------------ tubo
+#
+# A CERO los cuatro, y no es un olvido.
+#
+# Estuvieron cargados cuando este tema todavia era una tele con la interfaz dentro. No lo es:
+# el aparato ES la interfaz, asi que curvar y enmascarar la pantalla entera solo estropeaba lo
+# que hay que leer. El barrido sigue, pero no sale de aqui: es una capa encima de TODO el
+# arbol, una raya de un pixel cada tres al 60 %, que es lo que la hace cortar el marco y el
+# texto por igual. Ver ScanlineOverlay en Ornaments.kt.
+[crt]
+curvature = 0
+scanline  = 0
+mask      = 0
+gain      = 1
+
+# ------------------------------------------------------------------ barrido de pantalla
+[screen]
+scanAlpha  = 0.60
+scanPeriod = 3
+
+# ------------------------------------------------------------------ fondo
+#
+# Sin sala TODAVIA, y hay que decirlo. Este tema no trae tvs.toml propio, y en el aparato hay
+# uno comun: sin esta bandera se encontraria de fondo el salon victoriano del Parlour en cuanto
+# estuviera instalado, cambiando la letra y el color mientras el escenario sigue siendo de otro.
+[backdrop]
+room = false
+file = "backdrop.jpg"
+veil = 0.74
+
+# ------------------------------------------------------------------ la marca
+#
+# Un diafragma de ocho lados. Se lee su claridad, cara por cara, y se vuelve a montar con el
+# color del tema: lo que el fichero guarda no es el color sino la luz.
+[mark]
+file = "mark.svg"
+
+# ------------------------------------------------------------------ el cuaderno
+#
+# El nombre no es del tema: se llama «Companion» en todos. Uno por tema confunde —quien cambia
+# de tema cree que es otra herramienta y que lo apuntado se quedo en la anterior.
+[companion]
+name = "Companion"

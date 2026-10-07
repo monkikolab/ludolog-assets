@@ -1,0 +1,5 @@
+# Solo va lo que los temas usan: lo empaquetado y las notas de trabajo se quedan en el PC.
+themes/out/
+themes/*.sh
+themes/README.md
+themes/*/README.md
